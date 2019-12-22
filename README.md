@@ -33,3 +33,19 @@ These can be transitioned through via a tap. You can also go back to lowercase f
 For strings of capital letters, caps lock is only made efficient when the capitalized substring is three or more characters.
 ie caps lock will always take two or three taps, two to initiate and if the substring isn't at the end of the string, one more to end the caps lock if there is more text after the substring.
 
+### Lets try this with EBNF
+
+```EBNF
+whole_number = 0-9;
+lowercase = a-z;
+uppercase = A-Z;
+extra = "," | "." | " ";
+special_1 = "+" | "=" | "/" | "_" | "<" | ">" | "[" | "]" | "!" | "@" | "#" | "$" | "%" | "^" | "&" | "*" | "(" | ")" | "-" | "'" | "\" | "\"" | ":" | ";" | "," | "?";
+special_2 = "`" | "~" | "\\" | "|" | "{" | "}";
+
+keyboard_lower = (lowercase | whole_number | extra) , keyboard_lower | keyboard_lower, keyboard_upper | e;
+keyboard_upper = (uppercase | whole_number | extra) , keyboard_lower | keyboard_caps;
+keyboard_caps = (uppercase | whole_number | extra) , (keyboard_caps | keyboard_lower) | e;
+keyboard_math = (special_1 | whole_number | extra) , keyboard_math;
+
+```
