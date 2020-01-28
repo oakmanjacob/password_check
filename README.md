@@ -47,5 +47,6 @@ keyboard_lower = (lowercase | whole_number | extra) , keyboard_lower | keyboard_
 keyboard_upper = (uppercase | whole_number | extra) , keyboard_lower | keyboard_caps;
 keyboard_caps = (uppercase | whole_number | extra) , (keyboard_caps | keyboard_lower) | e;
 keyboard_math = (special_1 | whole_number | extra) , keyboard_math;
-
 ```
+
+EBNF is likely a bad plan due to looping definitions.
