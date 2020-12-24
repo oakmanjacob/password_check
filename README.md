@@ -1,7 +1,6 @@
 # The goal of this project is to create a program which takes a password string as an input and outputs the difficulty to type the string on different mobile keyboards
 
 Jacob Oakman
-08/30/2019
 
 ## Keyboards will consist of
 
